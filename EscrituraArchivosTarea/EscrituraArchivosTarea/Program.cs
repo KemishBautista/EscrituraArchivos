@@ -44,12 +44,13 @@ namespace EscrituraArchivosTarea
                 Años[i] = int.Parse(Console.ReadLine());
             }
 
-            foreach (string anime in Animes)
+            
+
+            foreach (var registro in Animes.Zip(Años,Tuple.Create)) //En el registro me salian duplicados los datos, encontre este codigo para que salgan bien ambos datos
             {
-               foreach(int año in Años)
-               {
-                    sw.WriteLine(anime + " de " + año);
-               }
+               
+                    sw.WriteLine(registro.Item1 + " de " +  registro.Item2);
+ 
             }
 
             sw.Close();//El archivo siempre se cierra
