@@ -1,0 +1,7 @@
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\bin\Debug\EscrituraArchivosTarea.exe.config
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\bin\Debug\EscrituraArchivosTarea.exe
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\bin\Debug\EscrituraArchivosTarea.pdb
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\obj\Debug\EscrituraArchivosTarea.csproj.AssemblyReference.cache
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\obj\Debug\EscrituraArchivosTarea.csproj.CoreCompileInputs.cache
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\obj\Debug\EscrituraArchivosTarea.exe
+C:\Users\kemba\OneDrive - tec tijuana\Segundo Semestre\EscrituraArchivos\EscrituraArchivosTarea\EscrituraArchivosTarea\obj\Debug\EscrituraArchivosTarea.pdb
