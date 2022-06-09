@@ -8,7 +8,7 @@ namespace EscrituraArchivosTarea
 {
     class Program
     {
-        //Clase ListaAnimales
+        //Clase ListaAnimes
         public class ListaAnimes
         {
             public string NombreAnimes;
@@ -43,19 +43,16 @@ namespace EscrituraArchivosTarea
 
                 Console.Clear();
 
-                // Switch para elegir entre un menu de opciones
                 switch (opcion)
                 {
                     case 'S':
                         {
-
-                            // Captura de variables auxiliares
                             Console.Write("Nombre del anime: ");
                             NombreAnimes = Console.ReadLine();
                             Console.Write("Año del anime: ");
                             Año = int.Parse(Console.ReadLine());
                             ListaAnimes Datos = new ListaAnimes(NombreAnimes,Año);
-                            //comienza a escribir la serie o pelicula
+                            
                             sw.WriteLine(Datos.NombreAnimes + "\t\t" + Datos.Año);
                             Datos.DesplegarDatos();
 
