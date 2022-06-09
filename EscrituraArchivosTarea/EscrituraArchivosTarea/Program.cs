@@ -11,76 +11,73 @@ namespace EscrituraArchivosTarea
         //Clase ListaAnimales
         public class ListaAnimes
         {
-            //Declaracion de campos
-            string[] Animes = new string[5];
-            int[] Años = new int[5];
+            public string NombreAnimes;
+            public int Año;
 
-
-            //Constructor de la clase
-            public ListaAnimes(string[] Animes, int[] Años)
+            public ListaAnimes(string NombreAnimes, int Año)
             {
-                this.Animes = Animes;
-                this.Años = Años;
+                this.NombreAnimes = NombreAnimes;
+                this.Año = Año;
             }
-            
-            //Metodo para desplegar la informacion escrita
+
             public void DesplegarDatos()
             {
-                for (int j=0;j<2;j++)
-                {
-                    Console.WriteLine("El anime a ver es " + Animes[j] + " del año " + Años[j]);
-                }
+                Console.WriteLine("El anime visto es " + NombreAnimes + ", del año " + Año);
             }
         }
 
         static void Main(string[] args)
         {
-            //Codigo dentro de un Try en caso de error
-            try
+            string NombreAnimes;
+            int Año;
+
+            StreamWriter sw = new StreamWriter("Animes.txt", true);
+            char opcion;
+
+            do
             {
-                //Creacion del StreamWriter para el archivo
-                StreamWriter sw = new StreamWriter("Animes.txt", true);
 
-                //Declaracion de variables
-                string[] Animes = new string[2];
-                int[] Años = new int[2];
+                Console.WriteLine("Para continuar presione S, de lo contrario presione N");
+                Console.Write("Desea continuar?: ");
+                opcion = char.Parse(Console.ReadLine());
 
-                //Ciclo for para introducir los datos
-                for (int i = 0; i < 2; i++)
+                Console.Clear();
+
+                // Switch para elegir entre un menu de opciones
+                switch (opcion)
                 {
-                    Console.Write("Nombre del anime: ");
-                    Animes[i] = Console.ReadLine();
+                    case 'S':
+                        {
 
-                    Console.Write("Año del anime: ");
-                    Años[i] = int.Parse(Console.ReadLine());
+                            // Captura de variables auxiliares
+                            Console.Write("Nombre del anime: ");
+                            NombreAnimes = Console.ReadLine();
+                            Console.Write("Año del anime: ");
+                            Año = int.Parse(Console.ReadLine());
+                            ListaAnimes Datos = new ListaAnimes(NombreAnimes,Año);
+                            //comienza a escribir la serie o pelicula
+                            sw.WriteLine(Datos.NombreAnimes + "\t\t" + Datos.Año);
+                            Datos.DesplegarDatos();
 
-                    Console.Clear();
+                            Console.WriteLine("Escribiendo archivo...");
+                            Console.ReadKey();
+                            Console.Clear();
+
+                        }
+                        break;
+
+                    case 'N':
+                        {
+                            Console.WriteLine("Presione ENTER para salir del programa");
+                            sw.Close();//El archivo siempre se cierra
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("OPCION INCORRECTA, PRESIONE S O N (CON MAYUSCULA)");
+                        break;
                 }
-
-                //Creacion del objeto e invocacion del metodo para desplegar
-                ListaAnimes Nombres = new ListaAnimes(Animes, Años);
-                Nombres.DesplegarDatos();
-
-                //Ciclo foreach para guardar el archivo
-                foreach (var registro in Animes.Zip(Años, Tuple.Create)) //En el registro me salian duplicados los datos, encontre este codigo para que salgan bien ambos datos
-                {
-
-                    sw.WriteLine(registro.Item1 + " de " + registro.Item2);
-
-                }
-
-                sw.Close();//El archivo siempre se cierra
-
-
-                Console.WriteLine("Escribiendo archivo...");
-                Console.ReadKey();
-            }
-            //Catch para detectar el error e imprimir el mensaje
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
+            } while (opcion != 'N');
         }
     }
 }
